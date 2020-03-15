@@ -53,7 +53,7 @@ fn main() {
     // Generate the lib.rs source code
     let mut buffer = fs::File::create(format!("{}/{}", out_dir, "lib.rs")).unwrap();
     buffer
-        .write(
+        .write_all(
             input_mods
                 .iter()
                 .map(|s| format!("pub mod {};", s))
@@ -62,4 +62,10 @@ fn main() {
                 .as_bytes(),
         )
         .unwrap();
+
+    // Copy generated *.rs files to "src"
+    fs::read_dir(out_dir).unwrap().into_iter().for_each(|f| {
+        let f = f.unwrap();
+        fs::copy(f.path(), format!("src/{}", f.file_name().to_str().unwrap())).unwrap();
+    });
 }
