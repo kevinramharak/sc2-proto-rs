@@ -1,10 +1,5 @@
-extern crate protoc_rust;
-
-use std::env;
-use std::ffi::OsStr;
-use std::fs;
-use std::io::prelude::*;
-use std::path::Path;
+use protoc_rust::{Codegen, Customize};
+use std::{env, ffi::OsStr, fs, io::prelude::*, path::Path};
 
 fn proto_modules(proto_dir: &Path) -> Vec<String> {
     fs::read_dir(proto_dir)
@@ -33,18 +28,16 @@ fn main() {
         .collect();
 
     // Compile protocol buffers
-    if let Err(e) = protoc_rust::run(protoc_rust::Args {
-        out_dir,
-        includes: &["s2client-proto/"],
-        input: input_files
-            .iter()
-            .map(|s| s.as_str())
-            .collect::<Vec<_>>()
-            .as_slice(),
-        customize: protoc_rust::Customize {
+    if let Err(e) = Codegen::new()
+        .out_dir(out_dir)
+        .include("s2client-proto/")
+        .inputs(input_files)
+        .customize(Customize {
+            expose_fields: Some(true),
             ..Default::default()
-        },
-    }) {
+        })
+        .run()
+    {
         panic!("{:#?}", e);
     } else {
         println!("protobufs were generated successfully");
@@ -64,7 +57,7 @@ fn main() {
         .unwrap();
 
     // Copy generated *.rs files to "src"
-    fs::read_dir(out_dir).unwrap().into_iter().for_each(|f| {
+    fs::read_dir(out_dir).unwrap().for_each(|f| {
         let f = f.unwrap();
         fs::copy(f.path(), format!("src/{}", f.file_name().to_str().unwrap())).unwrap();
     });
