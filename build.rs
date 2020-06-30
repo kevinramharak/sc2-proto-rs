@@ -1,6 +1,9 @@
+#[cfg(feature = "protoc-rust")]
 use protoc_rust::{Codegen, Customize};
+#[cfg(feature = "protoc-rust")]
 use std::{env, ffi::OsStr, fs, io::prelude::*, path::Path};
 
+#[cfg(feature = "protoc-rust")]
 fn proto_modules(proto_dir: &Path) -> Vec<String> {
     fs::read_dir(proto_dir)
         .expect("Could not read protobuf directory")
@@ -16,6 +19,7 @@ fn proto_modules(proto_dir: &Path) -> Vec<String> {
         .collect()
 }
 
+#[cfg(feature = "protoc-rust")]
 fn main() {
     let in_dir = "./s2client-proto/s2clientprotocol";
     let out_dir = &env::var("OUT_DIR").unwrap();
@@ -62,3 +66,6 @@ fn main() {
         fs::copy(f.path(), format!("src/{}", f.file_name().to_str().unwrap())).unwrap();
     });
 }
+
+#[cfg(not(feature = "protoc-rust"))]
+fn main() {}
