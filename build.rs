@@ -1,9 +1,11 @@
-#[cfg(feature = "protoc-rust")]
-use protoc_rust::{Codegen, Customize};
-#[cfg(feature = "protoc-rust")]
+#[cfg(feature = "generate")]
 use std::{env, ffi::OsStr, fs, io::prelude::*, path::Path};
+#[cfg(feature = "generate")]
+use protobuf_codegen::{Codegen,Customize};
+#[cfg(feature = "generate")]
+use protoc_bin_vendored::protoc_bin_path;
 
-#[cfg(feature = "protoc-rust")]
+#[cfg(feature = "generate")]
 fn proto_modules(proto_dir: &Path) -> Vec<String> {
 	fs::read_dir(proto_dir)
 		.expect("Could not read protobuf directory")
@@ -18,7 +20,7 @@ fn proto_modules(proto_dir: &Path) -> Vec<String> {
 		.collect()
 }
 
-#[cfg(feature = "protoc-rust")]
+#[cfg(feature = "generate")]
 fn main() {
 	let in_dir = "./s2client-proto/s2clientprotocol";
 	let out_dir = &env::var("OUT_DIR").unwrap();
@@ -31,18 +33,13 @@ fn main() {
 		.collect();
 
 	// Compile protocol buffers
-	if let Err(e) = Codegen::new()
+	Codegen::new()
 		.out_dir(out_dir)
-		.include("s2client-proto/")
+		.protoc_path(&protoc_bin_path().unwrap())
+		.include("./s2client-proto/")
 		.inputs(input_files)
-		.customize(Customize {
-			expose_fields: Some(true),
-			..Default::default()
-		})
-		.run()
-	{
-		panic!("{:#?}", e);
-	}
+		.run_from_script();
+
 	println!("protobufs were generated successfully");
 
 	// Generate the lib.rs source code
@@ -65,7 +62,7 @@ fn main() {
 	});
 }
 
-#[cfg(not(feature = "protoc-rust"))]
+#[cfg(not(feature = "generate"))]
 fn main() {
 	println!("using pre-generated *.rs files in 'src/'");
 }
