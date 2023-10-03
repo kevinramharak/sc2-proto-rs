@@ -9,7 +9,7 @@ Protocol buffers for the StarCraft II Client API. Automatically generated from t
 
 Pre-generated files in `src/` will be compiled by default.
 If you want to generate rust code from .proto files, install [protobuf compiler][protoc] and make sure it's in PATH.
-Then build this lib with `protoc-rust` feature.
+Then build this lib with `generate` feature.
 
 Please note that this repository only contains the protobuf definitions, no abstraction is included here.
 
