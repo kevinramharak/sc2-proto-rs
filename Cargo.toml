@@ -1,6 +1,6 @@
 [package]
 name = "sc2-proto"
-version = "0.4.0"
+version = "0.5.0"
 description = "protocol buffers for the StarCraft II Client API"
 authors = [
 	"Andrew J Westlake <kelixes@gmail.com>",
@@ -10,8 +10,8 @@ authors = [
 ]
 license = "MIT"
 documentation = "https://docs.rs/sc2-proto"
-homepage = "https://github.com/UltraMachine/sc2-proto-rs"
-repository = "https://github.com/UltraMachine/sc2-proto-rs"
+homepage = "https://github.com/kevinramharak/sc2-proto-rs"
+repository = "https://github.com/kevinramharak/sc2-proto-rs"
 edition = "2018"
 build = "build.rs"
 
