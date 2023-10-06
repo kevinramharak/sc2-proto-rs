@@ -1,68 +1,88 @@
 #[cfg(feature = "generate")]
-use protobuf_codegen::{Codegen, Customize};
+use protobuf_codegen::Codegen;
 #[cfg(feature = "generate")]
 use protoc_bin_vendored::protoc_bin_path;
 #[cfg(feature = "generate")]
-use std::{env, ffi::OsStr, fs, io::prelude::*, path::Path};
+use std::{env, ffi::OsStr, fs, path::Path};
 
 #[cfg(feature = "generate")]
 fn proto_modules(proto_dir: &Path) -> Vec<String> {
-	fs::read_dir(proto_dir)
-		.expect("Could not read protobuf directory")
-		.filter_map(|entry| {
-			let path = entry.ok()?.path();
-			if path.is_file() && path.extension() == Some(OsStr::new("proto")) {
-				path.file_stem().and_then(|n| n.to_os_string().into_string().ok())
-			} else {
-				None
-			}
-		})
-		.collect()
+    fs::read_dir(proto_dir)
+        .expect("Could not read protobuf directory")
+        .filter_map(|entry| {
+            let path = entry.ok()?.path();
+            if path.is_file() && path.extension() == Some(OsStr::new("proto")) {
+                path.file_stem().and_then(|n| n.to_os_string().into_string().ok())
+            } else {
+                None
+            }
+        })
+        .collect()
 }
 
 #[cfg(feature = "generate")]
-fn main() {
-	let in_dir = "./s2client-proto/s2clientprotocol";
-	let out_dir = &env::var("OUT_DIR").unwrap();
+fn main() -> Result<(), std::io::Error> {
+    use protobuf_codegen::Customize;
 
-	// Read list of all input protobuf files
-	let input_mods = proto_modules(Path::new(in_dir));
-	let input_files: Vec<String> = input_mods
-		.iter()
-		.map(|s| format!("{}/{}.proto", in_dir, s))
-		.collect();
+    let in_dir = "./s2client-proto/s2clientprotocol";
+    let out_dir = &env::var("OUT_DIR").unwrap();
 
-	// Compile protocol buffers
-	Codegen::new()
-		.out_dir(out_dir)
-		.protoc_path(&protoc_bin_path().unwrap())
-		.include("./s2client-proto/")
-		.inputs(input_files)
-		.run_from_script();
+    // Read list of all input protobuf files
+    let input_mods = proto_modules(Path::new(in_dir));
+    let input_files: Vec<String> = input_mods
+        .iter()
+        .map(|s| format!("{}/{}.proto", in_dir, s))
+        .collect();
 
-	println!("protobufs were generated successfully");
+    #[cfg(feature = "generate-accessors")]
+    let generate_accessors = true;
+    #[cfg(not(feature = "generate-accessors"))]
+    let generate_accessors = false;
+    #[cfg(feature = "generate-getter")]
+    let generate_getter = true;
+    #[cfg(not(feature = "generate-getter"))]
+    let generate_getter = false;
+    #[cfg(feature = "with-bytes")]
+    let with_bytes = true;
+    #[cfg(not(feature = "with-bytes"))]
+    let with_bytes=  false;
+    #[cfg(feature = "lite-runtime")]
+    let lite_runtime = true;
+    #[cfg(not(feature = "lite-runtime"))]
+    let lite_runtime=  false;
 
-	// Generate the lib.rs source code
-	let mut buffer = fs::File::create(format!("{}/{}", out_dir, "lib.rs")).unwrap();
-	buffer
-		.write_all(
-			input_mods
-				.iter()
-				.map(|s| format!("pub mod {};", s))
-				.collect::<Vec<_>>()
-				.join("\n")
-				.as_bytes(),
-		)
-		.unwrap();
+    // Compile protocol buffers
+    Codegen::new()
+        .out_dir(out_dir)
+        .protoc_path(&protoc_bin_path().unwrap())
+        .include("./s2client-proto/")
+        .inputs(input_files)
+        .customize(
+            Customize::default()
+                .generate_accessors(generate_accessors)
+                .generate_getter(generate_getter)
+                .tokio_bytes(with_bytes)
+                .tokio_bytes_for_string(with_bytes)
+                .lite_runtime(lite_runtime)
+        )
+        .run_from_script();
 
-	// Copy generated *.rs files to "src"
-	fs::read_dir(out_dir).unwrap().for_each(|f| {
-		let f = f.unwrap();
-		fs::copy(f.path(), format!("src/{}", f.file_name().to_str().unwrap())).unwrap();
-	});
+    println!("protobufs were generated successfully");
+
+    // Copy generated *.rs files to "src"
+    fs::read_dir(out_dir)?.for_each(|dir_entry| {
+        let file = dir_entry.unwrap();
+        let file_name = file.file_name();
+        fs::copy(file.path(), format!("src/{}", file_name.to_str().unwrap())).unwrap();
+    });
+
+    // rename the generated mod.rs to lib.rs
+    fs::rename("src/mod.rs", "src/lib.rs")?;
+
+    Ok(())
 }
 
 #[cfg(not(feature = "generate"))]
 fn main() {
-	println!("using pre-generated *.rs files in 'src/'");
+    println!("using pre-generated *.rs files in 'src/'");
 }

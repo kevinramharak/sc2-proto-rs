@@ -6,6 +6,7 @@ authors = [
 	"Andrew J Westlake <kelixes@gmail.com>",
 	"Armageddon <lunyx1337@gmail.com>",
 	"Hannes Karppila <hannes.karppila@gmail.com>",
+	"Kevin Ramahrak <kevin@ramharak.nl>",
 ]
 license = "MIT"
 documentation = "https://docs.rs/sc2-proto"
@@ -15,12 +16,17 @@ edition = "2018"
 build = "build.rs"
 
 [features]
+generate-accessors = []
+generate-getter = []
+lite-runtime = []
+with-bytes = ["dep:bytes"]
 generate = ["protobuf-codegen", "protoc-bin-vendored"]
-default = []
+default = ["generate"]
 
 [build-dependencies]
-protobuf-codegen = { version= "^3.1.0", optional = true }
-protoc-bin-vendored = {version ="3.0.0", optional = true }
+protobuf-codegen = { version = "^3.1.0", optional = true }
+protoc-bin-vendored = { version = "3.0.0", optional = true }
 
 [dependencies]
-protobuf = "^3.1.0"
+protobuf = { version = "^3.3.0", features = ["with-bytes"] }
+bytes = { version = "^1.5.0", optional = true }

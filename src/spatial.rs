@@ -1682,25 +1682,6 @@ impl ActionSpatialUnitCommand {
         ::std::default::Default::default()
     }
 
-    // optional int32 ability_id = 1;
-
-    pub fn ability_id(&self) -> i32 {
-        self.ability_id.unwrap_or(0)
-    }
-
-    pub fn clear_ability_id(&mut self) {
-        self.ability_id = ::std::option::Option::None;
-    }
-
-    pub fn has_ability_id(&self) -> bool {
-        self.ability_id.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_ability_id(&mut self, v: i32) {
-        self.ability_id = ::std::option::Option::Some(v);
-    }
-
     // optional .SC2APIProtocol.PointI target_screen_coord = 2;
 
     pub fn target_screen_coord(&self) -> &super::common::PointI {
@@ -1797,25 +1778,6 @@ impl ActionSpatialUnitCommand {
         } else {
             super::common::PointI::new()
         }
-    }
-
-    // optional bool queue_command = 4;
-
-    pub fn queue_command(&self) -> bool {
-        self.queue_command.unwrap_or(false)
-    }
-
-    pub fn clear_queue_command(&mut self) {
-        self.queue_command = ::std::option::Option::None;
-    }
-
-    pub fn has_queue_command(&self) -> bool {
-        self.queue_command.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_queue_command(&mut self, v: bool) {
-        self.queue_command = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -2157,28 +2119,6 @@ impl ActionSpatialUnitSelectionPoint {
         ::std::default::Default::default()
     }
 
-    // optional .SC2APIProtocol.ActionSpatialUnitSelectionPoint.Type type = 2;
-
-    pub fn type_(&self) -> action_spatial_unit_selection_point::Type {
-        match self.type_ {
-            Some(e) => e.enum_value_or(action_spatial_unit_selection_point::Type::Select),
-            None => action_spatial_unit_selection_point::Type::Select,
-        }
-    }
-
-    pub fn clear_type_(&mut self) {
-        self.type_ = ::std::option::Option::None;
-    }
-
-    pub fn has_type(&self) -> bool {
-        self.type_.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_type(&mut self, v: action_spatial_unit_selection_point::Type) {
-        self.type_ = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
-    }
-
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(2);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -2399,25 +2339,6 @@ impl<'a> ::std::default::Default for &'a ActionSpatialUnitSelectionRect {
 impl ActionSpatialUnitSelectionRect {
     pub fn new() -> ActionSpatialUnitSelectionRect {
         ::std::default::Default::default()
-    }
-
-    // optional bool selection_add = 2;
-
-    pub fn selection_add(&self) -> bool {
-        self.selection_add.unwrap_or(false)
-    }
-
-    pub fn clear_selection_add(&mut self) {
-        self.selection_add = ::std::option::Option::None;
-    }
-
-    pub fn has_selection_add(&self) -> bool {
-        self.selection_add.is_some()
-    }
-
-    // Param is passed by value, moved
-    pub fn set_selection_add(&mut self, v: bool) {
-        self.selection_add = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
