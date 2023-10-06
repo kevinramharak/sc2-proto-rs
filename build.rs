@@ -34,23 +34,6 @@ fn main() -> Result<(), std::io::Error> {
         .map(|s| format!("{}/{}.proto", in_dir, s))
         .collect();
 
-    #[cfg(feature = "generate-accessors")]
-    let generate_accessors = true;
-    #[cfg(not(feature = "generate-accessors"))]
-    let generate_accessors = false;
-    #[cfg(feature = "generate-getter")]
-    let generate_getter = true;
-    #[cfg(not(feature = "generate-getter"))]
-    let generate_getter = false;
-    #[cfg(feature = "with-bytes")]
-    let with_bytes = true;
-    #[cfg(not(feature = "with-bytes"))]
-    let with_bytes=  false;
-    #[cfg(feature = "lite-runtime")]
-    let lite_runtime = true;
-    #[cfg(not(feature = "lite-runtime"))]
-    let lite_runtime=  false;
-
     // Compile protocol buffers
     Codegen::new()
         .out_dir(out_dir)
@@ -59,11 +42,11 @@ fn main() -> Result<(), std::io::Error> {
         .inputs(input_files)
         .customize(
             Customize::default()
-                .generate_accessors(generate_accessors)
-                .generate_getter(generate_getter)
-                .tokio_bytes(with_bytes)
-                .tokio_bytes_for_string(with_bytes)
-                .lite_runtime(lite_runtime)
+                .generate_accessors(cfg!(feature = "generate-accessors"))
+                .generate_getter(cfg!(feature = "generate-getter"))
+                .tokio_bytes(cfg!(feature = "with-bytes"))
+                .tokio_bytes_for_string(cfg!(feature = "with-bytes"))
+                .lite_runtime(cfg!(feature = "lite-runtime"))
         )
         .run_from_script();
 

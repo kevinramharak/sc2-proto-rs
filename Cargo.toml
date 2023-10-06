@@ -21,7 +21,7 @@ generate-getter = []
 lite-runtime = []
 with-bytes = ["dep:bytes"]
 generate = ["protobuf-codegen", "protoc-bin-vendored"]
-default = ["generate"]
+default = []
 
 [build-dependencies]
 protobuf-codegen = { version = "^3.1.0", optional = true }
