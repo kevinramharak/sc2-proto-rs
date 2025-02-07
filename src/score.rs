@@ -50,6 +50,47 @@ impl Score {
         ::std::default::Default::default()
     }
 
+    // optional .SC2APIProtocol.Score.ScoreType score_type = 6;
+
+    pub fn score_type(&self) -> score::ScoreType {
+        match self.score_type {
+            Some(e) => e.enum_value_or(score::ScoreType::Curriculum),
+            None => score::ScoreType::Curriculum,
+        }
+    }
+
+    pub fn clear_score_type(&mut self) {
+        self.score_type = ::std::option::Option::None;
+    }
+
+    pub fn has_score_type(&self) -> bool {
+        self.score_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_score_type(&mut self, v: score::ScoreType) {
+        self.score_type = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional int32 score = 7;
+
+    pub fn score(&self) -> i32 {
+        self.score.unwrap_or(0)
+    }
+
+    pub fn clear_score(&mut self) {
+        self.score = ::std::option::Option::None;
+    }
+
+    pub fn has_score(&self) -> bool {
+        self.score.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_score(&mut self, v: i32) {
+        self.score = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -282,6 +323,101 @@ impl CategoryScoreDetails {
         ::std::default::Default::default()
     }
 
+    // optional float none = 1;
+
+    pub fn none(&self) -> f32 {
+        self.none.unwrap_or(0.)
+    }
+
+    pub fn clear_none(&mut self) {
+        self.none = ::std::option::Option::None;
+    }
+
+    pub fn has_none(&self) -> bool {
+        self.none.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_none(&mut self, v: f32) {
+        self.none = ::std::option::Option::Some(v);
+    }
+
+    // optional float army = 2;
+
+    pub fn army(&self) -> f32 {
+        self.army.unwrap_or(0.)
+    }
+
+    pub fn clear_army(&mut self) {
+        self.army = ::std::option::Option::None;
+    }
+
+    pub fn has_army(&self) -> bool {
+        self.army.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_army(&mut self, v: f32) {
+        self.army = ::std::option::Option::Some(v);
+    }
+
+    // optional float economy = 3;
+
+    pub fn economy(&self) -> f32 {
+        self.economy.unwrap_or(0.)
+    }
+
+    pub fn clear_economy(&mut self) {
+        self.economy = ::std::option::Option::None;
+    }
+
+    pub fn has_economy(&self) -> bool {
+        self.economy.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_economy(&mut self, v: f32) {
+        self.economy = ::std::option::Option::Some(v);
+    }
+
+    // optional float technology = 4;
+
+    pub fn technology(&self) -> f32 {
+        self.technology.unwrap_or(0.)
+    }
+
+    pub fn clear_technology(&mut self) {
+        self.technology = ::std::option::Option::None;
+    }
+
+    pub fn has_technology(&self) -> bool {
+        self.technology.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_technology(&mut self, v: f32) {
+        self.technology = ::std::option::Option::Some(v);
+    }
+
+    // optional float upgrade = 5;
+
+    pub fn upgrade(&self) -> f32 {
+        self.upgrade.unwrap_or(0.)
+    }
+
+    pub fn clear_upgrade(&mut self) {
+        self.upgrade = ::std::option::Option::None;
+    }
+
+    pub fn has_upgrade(&self) -> bool {
+        self.upgrade.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_upgrade(&mut self, v: f32) {
+        self.upgrade = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(5);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -470,6 +606,63 @@ impl<'a> ::std::default::Default for &'a VitalScoreDetails {
 impl VitalScoreDetails {
     pub fn new() -> VitalScoreDetails {
         ::std::default::Default::default()
+    }
+
+    // optional float life = 1;
+
+    pub fn life(&self) -> f32 {
+        self.life.unwrap_or(0.)
+    }
+
+    pub fn clear_life(&mut self) {
+        self.life = ::std::option::Option::None;
+    }
+
+    pub fn has_life(&self) -> bool {
+        self.life.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_life(&mut self, v: f32) {
+        self.life = ::std::option::Option::Some(v);
+    }
+
+    // optional float shields = 2;
+
+    pub fn shields(&self) -> f32 {
+        self.shields.unwrap_or(0.)
+    }
+
+    pub fn clear_shields(&mut self) {
+        self.shields = ::std::option::Option::None;
+    }
+
+    pub fn has_shields(&self) -> bool {
+        self.shields.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_shields(&mut self, v: f32) {
+        self.shields = ::std::option::Option::Some(v);
+    }
+
+    // optional float energy = 3;
+
+    pub fn energy(&self) -> f32 {
+        self.energy.unwrap_or(0.)
+    }
+
+    pub fn clear_energy(&mut self) {
+        self.energy = ::std::option::Option::None;
+    }
+
+    pub fn has_energy(&self) -> bool {
+        self.energy.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_energy(&mut self, v: f32) {
+        self.energy = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -678,6 +871,272 @@ impl<'a> ::std::default::Default for &'a ScoreDetails {
 impl ScoreDetails {
     pub fn new() -> ScoreDetails {
         ::std::default::Default::default()
+    }
+
+    // optional float idle_production_time = 1;
+
+    pub fn idle_production_time(&self) -> f32 {
+        self.idle_production_time.unwrap_or(0.)
+    }
+
+    pub fn clear_idle_production_time(&mut self) {
+        self.idle_production_time = ::std::option::Option::None;
+    }
+
+    pub fn has_idle_production_time(&self) -> bool {
+        self.idle_production_time.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_idle_production_time(&mut self, v: f32) {
+        self.idle_production_time = ::std::option::Option::Some(v);
+    }
+
+    // optional float idle_worker_time = 2;
+
+    pub fn idle_worker_time(&self) -> f32 {
+        self.idle_worker_time.unwrap_or(0.)
+    }
+
+    pub fn clear_idle_worker_time(&mut self) {
+        self.idle_worker_time = ::std::option::Option::None;
+    }
+
+    pub fn has_idle_worker_time(&self) -> bool {
+        self.idle_worker_time.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_idle_worker_time(&mut self, v: f32) {
+        self.idle_worker_time = ::std::option::Option::Some(v);
+    }
+
+    // optional float total_value_units = 3;
+
+    pub fn total_value_units(&self) -> f32 {
+        self.total_value_units.unwrap_or(0.)
+    }
+
+    pub fn clear_total_value_units(&mut self) {
+        self.total_value_units = ::std::option::Option::None;
+    }
+
+    pub fn has_total_value_units(&self) -> bool {
+        self.total_value_units.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_total_value_units(&mut self, v: f32) {
+        self.total_value_units = ::std::option::Option::Some(v);
+    }
+
+    // optional float total_value_structures = 4;
+
+    pub fn total_value_structures(&self) -> f32 {
+        self.total_value_structures.unwrap_or(0.)
+    }
+
+    pub fn clear_total_value_structures(&mut self) {
+        self.total_value_structures = ::std::option::Option::None;
+    }
+
+    pub fn has_total_value_structures(&self) -> bool {
+        self.total_value_structures.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_total_value_structures(&mut self, v: f32) {
+        self.total_value_structures = ::std::option::Option::Some(v);
+    }
+
+    // optional float killed_value_units = 5;
+
+    pub fn killed_value_units(&self) -> f32 {
+        self.killed_value_units.unwrap_or(0.)
+    }
+
+    pub fn clear_killed_value_units(&mut self) {
+        self.killed_value_units = ::std::option::Option::None;
+    }
+
+    pub fn has_killed_value_units(&self) -> bool {
+        self.killed_value_units.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_killed_value_units(&mut self, v: f32) {
+        self.killed_value_units = ::std::option::Option::Some(v);
+    }
+
+    // optional float killed_value_structures = 6;
+
+    pub fn killed_value_structures(&self) -> f32 {
+        self.killed_value_structures.unwrap_or(0.)
+    }
+
+    pub fn clear_killed_value_structures(&mut self) {
+        self.killed_value_structures = ::std::option::Option::None;
+    }
+
+    pub fn has_killed_value_structures(&self) -> bool {
+        self.killed_value_structures.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_killed_value_structures(&mut self, v: f32) {
+        self.killed_value_structures = ::std::option::Option::Some(v);
+    }
+
+    // optional float collected_minerals = 7;
+
+    pub fn collected_minerals(&self) -> f32 {
+        self.collected_minerals.unwrap_or(0.)
+    }
+
+    pub fn clear_collected_minerals(&mut self) {
+        self.collected_minerals = ::std::option::Option::None;
+    }
+
+    pub fn has_collected_minerals(&self) -> bool {
+        self.collected_minerals.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_collected_minerals(&mut self, v: f32) {
+        self.collected_minerals = ::std::option::Option::Some(v);
+    }
+
+    // optional float collected_vespene = 8;
+
+    pub fn collected_vespene(&self) -> f32 {
+        self.collected_vespene.unwrap_or(0.)
+    }
+
+    pub fn clear_collected_vespene(&mut self) {
+        self.collected_vespene = ::std::option::Option::None;
+    }
+
+    pub fn has_collected_vespene(&self) -> bool {
+        self.collected_vespene.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_collected_vespene(&mut self, v: f32) {
+        self.collected_vespene = ::std::option::Option::Some(v);
+    }
+
+    // optional float collection_rate_minerals = 9;
+
+    pub fn collection_rate_minerals(&self) -> f32 {
+        self.collection_rate_minerals.unwrap_or(0.)
+    }
+
+    pub fn clear_collection_rate_minerals(&mut self) {
+        self.collection_rate_minerals = ::std::option::Option::None;
+    }
+
+    pub fn has_collection_rate_minerals(&self) -> bool {
+        self.collection_rate_minerals.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_collection_rate_minerals(&mut self, v: f32) {
+        self.collection_rate_minerals = ::std::option::Option::Some(v);
+    }
+
+    // optional float collection_rate_vespene = 10;
+
+    pub fn collection_rate_vespene(&self) -> f32 {
+        self.collection_rate_vespene.unwrap_or(0.)
+    }
+
+    pub fn clear_collection_rate_vespene(&mut self) {
+        self.collection_rate_vespene = ::std::option::Option::None;
+    }
+
+    pub fn has_collection_rate_vespene(&self) -> bool {
+        self.collection_rate_vespene.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_collection_rate_vespene(&mut self, v: f32) {
+        self.collection_rate_vespene = ::std::option::Option::Some(v);
+    }
+
+    // optional float spent_minerals = 11;
+
+    pub fn spent_minerals(&self) -> f32 {
+        self.spent_minerals.unwrap_or(0.)
+    }
+
+    pub fn clear_spent_minerals(&mut self) {
+        self.spent_minerals = ::std::option::Option::None;
+    }
+
+    pub fn has_spent_minerals(&self) -> bool {
+        self.spent_minerals.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_spent_minerals(&mut self, v: f32) {
+        self.spent_minerals = ::std::option::Option::Some(v);
+    }
+
+    // optional float spent_vespene = 12;
+
+    pub fn spent_vespene(&self) -> f32 {
+        self.spent_vespene.unwrap_or(0.)
+    }
+
+    pub fn clear_spent_vespene(&mut self) {
+        self.spent_vespene = ::std::option::Option::None;
+    }
+
+    pub fn has_spent_vespene(&self) -> bool {
+        self.spent_vespene.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_spent_vespene(&mut self, v: f32) {
+        self.spent_vespene = ::std::option::Option::Some(v);
+    }
+
+    // optional float current_apm = 27;
+
+    pub fn current_apm(&self) -> f32 {
+        self.current_apm.unwrap_or(0.)
+    }
+
+    pub fn clear_current_apm(&mut self) {
+        self.current_apm = ::std::option::Option::None;
+    }
+
+    pub fn has_current_apm(&self) -> bool {
+        self.current_apm.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_current_apm(&mut self, v: f32) {
+        self.current_apm = ::std::option::Option::Some(v);
+    }
+
+    // optional float current_effective_apm = 28;
+
+    pub fn current_effective_apm(&self) -> f32 {
+        self.current_effective_apm.unwrap_or(0.)
+    }
+
+    pub fn clear_current_effective_apm(&mut self) {
+        self.current_effective_apm = ::std::option::Option::None;
+    }
+
+    pub fn has_current_effective_apm(&self) -> bool {
+        self.current_effective_apm.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_current_effective_apm(&mut self, v: f32) {
+        self.current_effective_apm = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {

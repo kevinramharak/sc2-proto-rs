@@ -487,6 +487,63 @@ impl ControlGroup {
         ::std::default::Default::default()
     }
 
+    // optional uint32 control_group_index = 1;
+
+    pub fn control_group_index(&self) -> u32 {
+        self.control_group_index.unwrap_or(0)
+    }
+
+    pub fn clear_control_group_index(&mut self) {
+        self.control_group_index = ::std::option::Option::None;
+    }
+
+    pub fn has_control_group_index(&self) -> bool {
+        self.control_group_index.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_control_group_index(&mut self, v: u32) {
+        self.control_group_index = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 leader_unit_type = 2;
+
+    pub fn leader_unit_type(&self) -> u32 {
+        self.leader_unit_type.unwrap_or(0)
+    }
+
+    pub fn clear_leader_unit_type(&mut self) {
+        self.leader_unit_type = ::std::option::Option::None;
+    }
+
+    pub fn has_leader_unit_type(&self) -> bool {
+        self.leader_unit_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_leader_unit_type(&mut self, v: u32) {
+        self.leader_unit_type = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 count = 3;
+
+    pub fn count(&self) -> u32 {
+        self.count.unwrap_or(0)
+    }
+
+    pub fn clear_count(&mut self) {
+        self.count = ::std::option::Option::None;
+    }
+
+    pub fn has_count(&self) -> bool {
+        self.count.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_count(&mut self, v: u32) {
+        self.count = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -659,6 +716,196 @@ impl<'a> ::std::default::Default for &'a UnitInfo {
 impl UnitInfo {
     pub fn new() -> UnitInfo {
         ::std::default::Default::default()
+    }
+
+    // optional uint32 unit_type = 1;
+
+    pub fn unit_type(&self) -> u32 {
+        self.unit_type.unwrap_or(0)
+    }
+
+    pub fn clear_unit_type(&mut self) {
+        self.unit_type = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_type(&self) -> bool {
+        self.unit_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_type(&mut self, v: u32) {
+        self.unit_type = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 player_relative = 2;
+
+    pub fn player_relative(&self) -> u32 {
+        self.player_relative.unwrap_or(0)
+    }
+
+    pub fn clear_player_relative(&mut self) {
+        self.player_relative = ::std::option::Option::None;
+    }
+
+    pub fn has_player_relative(&self) -> bool {
+        self.player_relative.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_player_relative(&mut self, v: u32) {
+        self.player_relative = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 health = 3;
+
+    pub fn health(&self) -> i32 {
+        self.health.unwrap_or(0)
+    }
+
+    pub fn clear_health(&mut self) {
+        self.health = ::std::option::Option::None;
+    }
+
+    pub fn has_health(&self) -> bool {
+        self.health.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_health(&mut self, v: i32) {
+        self.health = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 shields = 4;
+
+    pub fn shields(&self) -> i32 {
+        self.shields.unwrap_or(0)
+    }
+
+    pub fn clear_shields(&mut self) {
+        self.shields = ::std::option::Option::None;
+    }
+
+    pub fn has_shields(&self) -> bool {
+        self.shields.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_shields(&mut self, v: i32) {
+        self.shields = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 energy = 5;
+
+    pub fn energy(&self) -> i32 {
+        self.energy.unwrap_or(0)
+    }
+
+    pub fn clear_energy(&mut self) {
+        self.energy = ::std::option::Option::None;
+    }
+
+    pub fn has_energy(&self) -> bool {
+        self.energy.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_energy(&mut self, v: i32) {
+        self.energy = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 transport_slots_taken = 6;
+
+    pub fn transport_slots_taken(&self) -> i32 {
+        self.transport_slots_taken.unwrap_or(0)
+    }
+
+    pub fn clear_transport_slots_taken(&mut self) {
+        self.transport_slots_taken = ::std::option::Option::None;
+    }
+
+    pub fn has_transport_slots_taken(&self) -> bool {
+        self.transport_slots_taken.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_transport_slots_taken(&mut self, v: i32) {
+        self.transport_slots_taken = ::std::option::Option::Some(v);
+    }
+
+    // optional float build_progress = 7;
+
+    pub fn build_progress(&self) -> f32 {
+        self.build_progress.unwrap_or(0.)
+    }
+
+    pub fn clear_build_progress(&mut self) {
+        self.build_progress = ::std::option::Option::None;
+    }
+
+    pub fn has_build_progress(&self) -> bool {
+        self.build_progress.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_build_progress(&mut self, v: f32) {
+        self.build_progress = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 max_health = 9;
+
+    pub fn max_health(&self) -> i32 {
+        self.max_health.unwrap_or(0)
+    }
+
+    pub fn clear_max_health(&mut self) {
+        self.max_health = ::std::option::Option::None;
+    }
+
+    pub fn has_max_health(&self) -> bool {
+        self.max_health.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_max_health(&mut self, v: i32) {
+        self.max_health = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 max_shields = 10;
+
+    pub fn max_shields(&self) -> i32 {
+        self.max_shields.unwrap_or(0)
+    }
+
+    pub fn clear_max_shields(&mut self) {
+        self.max_shields = ::std::option::Option::None;
+    }
+
+    pub fn has_max_shields(&self) -> bool {
+        self.max_shields.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_max_shields(&mut self, v: i32) {
+        self.max_shields = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 max_energy = 11;
+
+    pub fn max_energy(&self) -> i32 {
+        self.max_energy.unwrap_or(0)
+    }
+
+    pub fn clear_max_energy(&mut self) {
+        self.max_energy = ::std::option::Option::None;
+    }
+
+    pub fn has_max_energy(&self) -> bool {
+        self.max_energy.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_max_energy(&mut self, v: i32) {
+        self.max_energy = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -950,6 +1197,63 @@ impl<'a> ::std::default::Default for &'a SinglePanel {
 impl SinglePanel {
     pub fn new() -> SinglePanel {
         ::std::default::Default::default()
+    }
+
+    // optional int32 attack_upgrade_level = 2;
+
+    pub fn attack_upgrade_level(&self) -> i32 {
+        self.attack_upgrade_level.unwrap_or(0)
+    }
+
+    pub fn clear_attack_upgrade_level(&mut self) {
+        self.attack_upgrade_level = ::std::option::Option::None;
+    }
+
+    pub fn has_attack_upgrade_level(&self) -> bool {
+        self.attack_upgrade_level.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_attack_upgrade_level(&mut self, v: i32) {
+        self.attack_upgrade_level = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 armor_upgrade_level = 3;
+
+    pub fn armor_upgrade_level(&self) -> i32 {
+        self.armor_upgrade_level.unwrap_or(0)
+    }
+
+    pub fn clear_armor_upgrade_level(&mut self) {
+        self.armor_upgrade_level = ::std::option::Option::None;
+    }
+
+    pub fn has_armor_upgrade_level(&self) -> bool {
+        self.armor_upgrade_level.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_armor_upgrade_level(&mut self, v: i32) {
+        self.armor_upgrade_level = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 shield_upgrade_level = 4;
+
+    pub fn shield_upgrade_level(&self) -> i32 {
+        self.shield_upgrade_level.unwrap_or(0)
+    }
+
+    pub fn clear_shield_upgrade_level(&mut self) {
+        self.shield_upgrade_level = ::std::option::Option::None;
+    }
+
+    pub fn has_shield_upgrade_level(&self) -> bool {
+        self.shield_upgrade_level.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_shield_upgrade_level(&mut self, v: i32) {
+        self.shield_upgrade_level = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -1269,6 +1573,25 @@ impl CargoPanel {
         ::std::default::Default::default()
     }
 
+    // optional int32 slots_available = 3;
+
+    pub fn slots_available(&self) -> i32 {
+        self.slots_available.unwrap_or(0)
+    }
+
+    pub fn clear_slots_available(&mut self) {
+        self.slots_available = ::std::option::Option::None;
+    }
+
+    pub fn has_slots_available(&self) -> bool {
+        self.slots_available.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_slots_available(&mut self, v: i32) {
+        self.slots_available = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -1425,6 +1748,44 @@ impl<'a> ::std::default::Default for &'a BuildItem {
 impl BuildItem {
     pub fn new() -> BuildItem {
         ::std::default::Default::default()
+    }
+
+    // optional uint32 ability_id = 1;
+
+    pub fn ability_id(&self) -> u32 {
+        self.ability_id.unwrap_or(0)
+    }
+
+    pub fn clear_ability_id(&mut self) {
+        self.ability_id = ::std::option::Option::None;
+    }
+
+    pub fn has_ability_id(&self) -> bool {
+        self.ability_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ability_id(&mut self, v: u32) {
+        self.ability_id = ::std::option::Option::Some(v);
+    }
+
+    // optional float build_progress = 2;
+
+    pub fn build_progress(&self) -> f32 {
+        self.build_progress.unwrap_or(0.)
+    }
+
+    pub fn clear_build_progress(&mut self) {
+        self.build_progress = ::std::option::Option::None;
+    }
+
+    pub fn has_build_progress(&self) -> bool {
+        self.build_progress.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_build_progress(&mut self, v: f32) {
+        self.build_progress = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -2490,6 +2851,47 @@ impl ActionControlGroup {
         ::std::default::Default::default()
     }
 
+    // optional .SC2APIProtocol.ActionControlGroup.ControlGroupAction action = 1;
+
+    pub fn action(&self) -> action_control_group::ControlGroupAction {
+        match self.action {
+            Some(e) => e.enum_value_or(action_control_group::ControlGroupAction::Recall),
+            None => action_control_group::ControlGroupAction::Recall,
+        }
+    }
+
+    pub fn clear_action(&mut self) {
+        self.action = ::std::option::Option::None;
+    }
+
+    pub fn has_action(&self) -> bool {
+        self.action.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_action(&mut self, v: action_control_group::ControlGroupAction) {
+        self.action = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional uint32 control_group_index = 2;
+
+    pub fn control_group_index(&self) -> u32 {
+        self.control_group_index.unwrap_or(0)
+    }
+
+    pub fn clear_control_group_index(&mut self) {
+        self.control_group_index = ::std::option::Option::None;
+    }
+
+    pub fn has_control_group_index(&self) -> bool {
+        self.control_group_index.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_control_group_index(&mut self, v: u32) {
+        self.control_group_index = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(2);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -2715,6 +3117,25 @@ impl ActionSelectArmy {
         ::std::default::Default::default()
     }
 
+    // optional bool selection_add = 1;
+
+    pub fn selection_add(&self) -> bool {
+        self.selection_add.unwrap_or(false)
+    }
+
+    pub fn clear_selection_add(&mut self) {
+        self.selection_add = ::std::option::Option::None;
+    }
+
+    pub fn has_selection_add(&self) -> bool {
+        self.selection_add.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_selection_add(&mut self, v: bool) {
+        self.selection_add = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(1);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -2835,6 +3256,25 @@ impl<'a> ::std::default::Default for &'a ActionSelectWarpGates {
 impl ActionSelectWarpGates {
     pub fn new() -> ActionSelectWarpGates {
         ::std::default::Default::default()
+    }
+
+    // optional bool selection_add = 1;
+
+    pub fn selection_add(&self) -> bool {
+        self.selection_add.unwrap_or(false)
+    }
+
+    pub fn clear_selection_add(&mut self) {
+        self.selection_add = ::std::option::Option::None;
+    }
+
+    pub fn has_selection_add(&self) -> bool {
+        self.selection_add.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_selection_add(&mut self, v: bool) {
+        self.selection_add = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -3062,6 +3502,28 @@ impl ActionSelectIdleWorker {
         ::std::default::Default::default()
     }
 
+    // optional .SC2APIProtocol.ActionSelectIdleWorker.Type type = 1;
+
+    pub fn type_(&self) -> action_select_idle_worker::Type {
+        match self.type_ {
+            Some(e) => e.enum_value_or(action_select_idle_worker::Type::Set),
+            None => action_select_idle_worker::Type::Set,
+        }
+    }
+
+    pub fn clear_type_(&mut self) {
+        self.type_ = ::std::option::Option::None;
+    }
+
+    pub fn has_type(&self) -> bool {
+        self.type_.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_type(&mut self, v: action_select_idle_worker::Type) {
+        self.type_ = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(1);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -3265,6 +3727,47 @@ impl<'a> ::std::default::Default for &'a ActionMultiPanel {
 impl ActionMultiPanel {
     pub fn new() -> ActionMultiPanel {
         ::std::default::Default::default()
+    }
+
+    // optional .SC2APIProtocol.ActionMultiPanel.Type type = 1;
+
+    pub fn type_(&self) -> action_multi_panel::Type {
+        match self.type_ {
+            Some(e) => e.enum_value_or(action_multi_panel::Type::SingleSelect),
+            None => action_multi_panel::Type::SingleSelect,
+        }
+    }
+
+    pub fn clear_type_(&mut self) {
+        self.type_ = ::std::option::Option::None;
+    }
+
+    pub fn has_type(&self) -> bool {
+        self.type_.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_type(&mut self, v: action_multi_panel::Type) {
+        self.type_ = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional int32 unit_index = 2;
+
+    pub fn unit_index(&self) -> i32 {
+        self.unit_index.unwrap_or(0)
+    }
+
+    pub fn clear_unit_index(&mut self) {
+        self.unit_index = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_index(&self) -> bool {
+        self.unit_index.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_index(&mut self, v: i32) {
+        self.unit_index = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -3486,6 +3989,25 @@ impl ActionCargoPanelUnload {
         ::std::default::Default::default()
     }
 
+    // optional int32 unit_index = 1;
+
+    pub fn unit_index(&self) -> i32 {
+        self.unit_index.unwrap_or(0)
+    }
+
+    pub fn clear_unit_index(&mut self) {
+        self.unit_index = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_index(&self) -> bool {
+        self.unit_index.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_index(&mut self, v: i32) {
+        self.unit_index = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(1);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -3608,6 +4130,25 @@ impl ActionProductionPanelRemoveFromQueue {
         ::std::default::Default::default()
     }
 
+    // optional int32 unit_index = 1;
+
+    pub fn unit_index(&self) -> i32 {
+        self.unit_index.unwrap_or(0)
+    }
+
+    pub fn clear_unit_index(&mut self) {
+        self.unit_index = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_index(&self) -> bool {
+        self.unit_index.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_index(&mut self, v: i32) {
+        self.unit_index = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(1);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -3728,6 +4269,25 @@ impl<'a> ::std::default::Default for &'a ActionToggleAutocast {
 impl ActionToggleAutocast {
     pub fn new() -> ActionToggleAutocast {
         ::std::default::Default::default()
+    }
+
+    // optional int32 ability_id = 1;
+
+    pub fn ability_id(&self) -> i32 {
+        self.ability_id.unwrap_or(0)
+    }
+
+    pub fn clear_ability_id(&mut self) {
+        self.ability_id = ::std::option::Option::None;
+    }
+
+    pub fn has_ability_id(&self) -> bool {
+        self.ability_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ability_id(&mut self, v: i32) {
+        self.ability_id = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {

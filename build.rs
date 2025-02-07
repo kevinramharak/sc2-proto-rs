@@ -42,8 +42,6 @@ fn main() -> Result<(), std::io::Error> {
         .inputs(input_files)
         .customize(
             Customize::default()
-                .generate_accessors(cfg!(feature = "generate-accessors"))
-                .generate_getter(cfg!(feature = "generate-getter"))
                 .tokio_bytes(cfg!(feature = "with-bytes"))
                 .tokio_bytes_for_string(cfg!(feature = "with-bytes"))
                 .lite_runtime(cfg!(feature = "lite-runtime"))

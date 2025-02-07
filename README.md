@@ -12,8 +12,6 @@ If you want to generate rust code from .proto files, then build this lib with `g
 
 |Feature|Effect|
 |---|---|
-|`generate-accessors`| `get_`, `set_`, `mut_` etc. accessors are not generated |
-|`generate-getter`| `get_` is not generated even if `syntax = "proto2"` |
 |`lite-runtime`| The generated code is smaller, but reflection, text format and JSON serialization won't work|
 |`with-bytes`| Use [`bytes::Bytes`](https://docs.rs/bytes/latest/bytes/#bytes) for `bytes` and `string` fields |
 

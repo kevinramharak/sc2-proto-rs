@@ -48,6 +48,44 @@ impl AvailableAbility {
         ::std::default::Default::default()
     }
 
+    // optional int32 ability_id = 1;
+
+    pub fn ability_id(&self) -> i32 {
+        self.ability_id.unwrap_or(0)
+    }
+
+    pub fn clear_ability_id(&mut self) {
+        self.ability_id = ::std::option::Option::None;
+    }
+
+    pub fn has_ability_id(&self) -> bool {
+        self.ability_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ability_id(&mut self, v: i32) {
+        self.ability_id = ::std::option::Option::Some(v);
+    }
+
+    // optional bool requires_point = 2;
+
+    pub fn requires_point(&self) -> bool {
+        self.requires_point.unwrap_or(false)
+    }
+
+    pub fn clear_requires_point(&mut self) {
+        self.requires_point = ::std::option::Option::None;
+    }
+
+    pub fn has_requires_point(&self) -> bool {
+        self.requires_point.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_requires_point(&mut self, v: bool) {
+        self.requires_point = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(2);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -188,6 +226,61 @@ impl<'a> ::std::default::Default for &'a ImageData {
 impl ImageData {
     pub fn new() -> ImageData {
         ::std::default::Default::default()
+    }
+
+    // optional int32 bits_per_pixel = 1;
+
+    pub fn bits_per_pixel(&self) -> i32 {
+        self.bits_per_pixel.unwrap_or(0)
+    }
+
+    pub fn clear_bits_per_pixel(&mut self) {
+        self.bits_per_pixel = ::std::option::Option::None;
+    }
+
+    pub fn has_bits_per_pixel(&self) -> bool {
+        self.bits_per_pixel.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_bits_per_pixel(&mut self, v: i32) {
+        self.bits_per_pixel = ::std::option::Option::Some(v);
+    }
+
+    // optional bytes data = 3;
+
+    pub fn data(&self) -> &[u8] {
+        match self.data.as_ref() {
+            Some(v) => v,
+            None => &[],
+        }
+    }
+
+    pub fn clear_data(&mut self) {
+        self.data = ::std::option::Option::None;
+    }
+
+    pub fn has_data(&self) -> bool {
+        self.data.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_data(&mut self, v: ::std::vec::Vec<u8>) {
+        self.data = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_data(&mut self) -> &mut ::std::vec::Vec<u8> {
+        if self.data.is_none() {
+            self.data = ::std::option::Option::Some(::std::vec::Vec::new());
+        }
+        self.data.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_data(&mut self) -> ::std::vec::Vec<u8> {
+        self.data.take().unwrap_or_else(|| ::std::vec::Vec::new())
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -345,6 +438,44 @@ impl<'a> ::std::default::Default for &'a PointI {
 impl PointI {
     pub fn new() -> PointI {
         ::std::default::Default::default()
+    }
+
+    // optional int32 x = 1;
+
+    pub fn x(&self) -> i32 {
+        self.x.unwrap_or(0)
+    }
+
+    pub fn clear_x(&mut self) {
+        self.x = ::std::option::Option::None;
+    }
+
+    pub fn has_x(&self) -> bool {
+        self.x.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_x(&mut self, v: i32) {
+        self.x = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 y = 2;
+
+    pub fn y(&self) -> i32 {
+        self.y.unwrap_or(0)
+    }
+
+    pub fn clear_y(&mut self) {
+        self.y = ::std::option::Option::None;
+    }
+
+    pub fn has_y(&self) -> bool {
+        self.y.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_y(&mut self, v: i32) {
+        self.y = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -629,6 +760,44 @@ impl Point2D {
         ::std::default::Default::default()
     }
 
+    // optional float x = 1;
+
+    pub fn x(&self) -> f32 {
+        self.x.unwrap_or(0.)
+    }
+
+    pub fn clear_x(&mut self) {
+        self.x = ::std::option::Option::None;
+    }
+
+    pub fn has_x(&self) -> bool {
+        self.x.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_x(&mut self, v: f32) {
+        self.x = ::std::option::Option::Some(v);
+    }
+
+    // optional float y = 2;
+
+    pub fn y(&self) -> f32 {
+        self.y.unwrap_or(0.)
+    }
+
+    pub fn clear_y(&mut self) {
+        self.y = ::std::option::Option::None;
+    }
+
+    pub fn has_y(&self) -> bool {
+        self.y.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_y(&mut self, v: f32) {
+        self.y = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(2);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -769,6 +938,63 @@ impl<'a> ::std::default::Default for &'a Point {
 impl Point {
     pub fn new() -> Point {
         ::std::default::Default::default()
+    }
+
+    // optional float x = 1;
+
+    pub fn x(&self) -> f32 {
+        self.x.unwrap_or(0.)
+    }
+
+    pub fn clear_x(&mut self) {
+        self.x = ::std::option::Option::None;
+    }
+
+    pub fn has_x(&self) -> bool {
+        self.x.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_x(&mut self, v: f32) {
+        self.x = ::std::option::Option::Some(v);
+    }
+
+    // optional float y = 2;
+
+    pub fn y(&self) -> f32 {
+        self.y.unwrap_or(0.)
+    }
+
+    pub fn clear_y(&mut self) {
+        self.y = ::std::option::Option::None;
+    }
+
+    pub fn has_y(&self) -> bool {
+        self.y.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_y(&mut self, v: f32) {
+        self.y = ::std::option::Option::Some(v);
+    }
+
+    // optional float z = 3;
+
+    pub fn z(&self) -> f32 {
+        self.z.unwrap_or(0.)
+    }
+
+    pub fn clear_z(&mut self) {
+        self.z = ::std::option::Option::None;
+    }
+
+    pub fn has_z(&self) -> bool {
+        self.z.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_z(&mut self, v: f32) {
+        self.z = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -925,6 +1151,44 @@ impl<'a> ::std::default::Default for &'a Size2DI {
 impl Size2DI {
     pub fn new() -> Size2DI {
         ::std::default::Default::default()
+    }
+
+    // optional int32 x = 1;
+
+    pub fn x(&self) -> i32 {
+        self.x.unwrap_or(0)
+    }
+
+    pub fn clear_x(&mut self) {
+        self.x = ::std::option::Option::None;
+    }
+
+    pub fn has_x(&self) -> bool {
+        self.x.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_x(&mut self, v: i32) {
+        self.x = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 y = 2;
+
+    pub fn y(&self) -> i32 {
+        self.y.unwrap_or(0)
+    }
+
+    pub fn clear_y(&mut self) {
+        self.y = ::std::option::Option::None;
+    }
+
+    pub fn has_y(&self) -> bool {
+        self.y.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_y(&mut self, v: i32) {
+        self.y = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {

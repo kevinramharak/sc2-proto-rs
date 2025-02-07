@@ -74,6 +74,362 @@ impl AbilityData {
         ::std::default::Default::default()
     }
 
+    // optional uint32 ability_id = 1;
+
+    pub fn ability_id(&self) -> u32 {
+        self.ability_id.unwrap_or(0)
+    }
+
+    pub fn clear_ability_id(&mut self) {
+        self.ability_id = ::std::option::Option::None;
+    }
+
+    pub fn has_ability_id(&self) -> bool {
+        self.ability_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ability_id(&mut self, v: u32) {
+        self.ability_id = ::std::option::Option::Some(v);
+    }
+
+    // optional string link_name = 2;
+
+    pub fn link_name(&self) -> &str {
+        match self.link_name.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_link_name(&mut self) {
+        self.link_name = ::std::option::Option::None;
+    }
+
+    pub fn has_link_name(&self) -> bool {
+        self.link_name.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_link_name(&mut self, v: ::std::string::String) {
+        self.link_name = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_link_name(&mut self) -> &mut ::std::string::String {
+        if self.link_name.is_none() {
+            self.link_name = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.link_name.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_link_name(&mut self) -> ::std::string::String {
+        self.link_name.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional uint32 link_index = 3;
+
+    pub fn link_index(&self) -> u32 {
+        self.link_index.unwrap_or(0)
+    }
+
+    pub fn clear_link_index(&mut self) {
+        self.link_index = ::std::option::Option::None;
+    }
+
+    pub fn has_link_index(&self) -> bool {
+        self.link_index.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_link_index(&mut self, v: u32) {
+        self.link_index = ::std::option::Option::Some(v);
+    }
+
+    // optional string button_name = 4;
+
+    pub fn button_name(&self) -> &str {
+        match self.button_name.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_button_name(&mut self) {
+        self.button_name = ::std::option::Option::None;
+    }
+
+    pub fn has_button_name(&self) -> bool {
+        self.button_name.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_button_name(&mut self, v: ::std::string::String) {
+        self.button_name = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_button_name(&mut self) -> &mut ::std::string::String {
+        if self.button_name.is_none() {
+            self.button_name = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.button_name.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_button_name(&mut self) -> ::std::string::String {
+        self.button_name.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional string friendly_name = 5;
+
+    pub fn friendly_name(&self) -> &str {
+        match self.friendly_name.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_friendly_name(&mut self) {
+        self.friendly_name = ::std::option::Option::None;
+    }
+
+    pub fn has_friendly_name(&self) -> bool {
+        self.friendly_name.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_friendly_name(&mut self, v: ::std::string::String) {
+        self.friendly_name = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_friendly_name(&mut self) -> &mut ::std::string::String {
+        if self.friendly_name.is_none() {
+            self.friendly_name = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.friendly_name.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_friendly_name(&mut self) -> ::std::string::String {
+        self.friendly_name.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional string hotkey = 6;
+
+    pub fn hotkey(&self) -> &str {
+        match self.hotkey.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_hotkey(&mut self) {
+        self.hotkey = ::std::option::Option::None;
+    }
+
+    pub fn has_hotkey(&self) -> bool {
+        self.hotkey.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_hotkey(&mut self, v: ::std::string::String) {
+        self.hotkey = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_hotkey(&mut self) -> &mut ::std::string::String {
+        if self.hotkey.is_none() {
+            self.hotkey = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.hotkey.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_hotkey(&mut self) -> ::std::string::String {
+        self.hotkey.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional uint32 remaps_to_ability_id = 7;
+
+    pub fn remaps_to_ability_id(&self) -> u32 {
+        self.remaps_to_ability_id.unwrap_or(0)
+    }
+
+    pub fn clear_remaps_to_ability_id(&mut self) {
+        self.remaps_to_ability_id = ::std::option::Option::None;
+    }
+
+    pub fn has_remaps_to_ability_id(&self) -> bool {
+        self.remaps_to_ability_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_remaps_to_ability_id(&mut self, v: u32) {
+        self.remaps_to_ability_id = ::std::option::Option::Some(v);
+    }
+
+    // optional bool available = 8;
+
+    pub fn available(&self) -> bool {
+        self.available.unwrap_or(false)
+    }
+
+    pub fn clear_available(&mut self) {
+        self.available = ::std::option::Option::None;
+    }
+
+    pub fn has_available(&self) -> bool {
+        self.available.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_available(&mut self, v: bool) {
+        self.available = ::std::option::Option::Some(v);
+    }
+
+    // optional .SC2APIProtocol.AbilityData.Target target = 9;
+
+    pub fn target(&self) -> ability_data::Target {
+        match self.target {
+            Some(e) => e.enum_value_or(ability_data::Target::None),
+            None => ability_data::Target::None,
+        }
+    }
+
+    pub fn clear_target(&mut self) {
+        self.target = ::std::option::Option::None;
+    }
+
+    pub fn has_target(&self) -> bool {
+        self.target.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_target(&mut self, v: ability_data::Target) {
+        self.target = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional bool allow_minimap = 10;
+
+    pub fn allow_minimap(&self) -> bool {
+        self.allow_minimap.unwrap_or(false)
+    }
+
+    pub fn clear_allow_minimap(&mut self) {
+        self.allow_minimap = ::std::option::Option::None;
+    }
+
+    pub fn has_allow_minimap(&self) -> bool {
+        self.allow_minimap.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_allow_minimap(&mut self, v: bool) {
+        self.allow_minimap = ::std::option::Option::Some(v);
+    }
+
+    // optional bool allow_autocast = 11;
+
+    pub fn allow_autocast(&self) -> bool {
+        self.allow_autocast.unwrap_or(false)
+    }
+
+    pub fn clear_allow_autocast(&mut self) {
+        self.allow_autocast = ::std::option::Option::None;
+    }
+
+    pub fn has_allow_autocast(&self) -> bool {
+        self.allow_autocast.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_allow_autocast(&mut self, v: bool) {
+        self.allow_autocast = ::std::option::Option::Some(v);
+    }
+
+    // optional bool is_building = 12;
+
+    pub fn is_building(&self) -> bool {
+        self.is_building.unwrap_or(false)
+    }
+
+    pub fn clear_is_building(&mut self) {
+        self.is_building = ::std::option::Option::None;
+    }
+
+    pub fn has_is_building(&self) -> bool {
+        self.is_building.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_is_building(&mut self, v: bool) {
+        self.is_building = ::std::option::Option::Some(v);
+    }
+
+    // optional float footprint_radius = 13;
+
+    pub fn footprint_radius(&self) -> f32 {
+        self.footprint_radius.unwrap_or(0.)
+    }
+
+    pub fn clear_footprint_radius(&mut self) {
+        self.footprint_radius = ::std::option::Option::None;
+    }
+
+    pub fn has_footprint_radius(&self) -> bool {
+        self.footprint_radius.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_footprint_radius(&mut self, v: f32) {
+        self.footprint_radius = ::std::option::Option::Some(v);
+    }
+
+    // optional bool is_instant_placement = 14;
+
+    pub fn is_instant_placement(&self) -> bool {
+        self.is_instant_placement.unwrap_or(false)
+    }
+
+    pub fn clear_is_instant_placement(&mut self) {
+        self.is_instant_placement = ::std::option::Option::None;
+    }
+
+    pub fn has_is_instant_placement(&self) -> bool {
+        self.is_instant_placement.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_is_instant_placement(&mut self, v: bool) {
+        self.is_instant_placement = ::std::option::Option::Some(v);
+    }
+
+    // optional float cast_range = 15;
+
+    pub fn cast_range(&self) -> f32 {
+        self.cast_range.unwrap_or(0.)
+    }
+
+    pub fn clear_cast_range(&mut self) {
+        self.cast_range = ::std::option::Option::None;
+    }
+
+    pub fn has_cast_range(&self) -> bool {
+        self.cast_range.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_cast_range(&mut self, v: f32) {
+        self.cast_range = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(15);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -509,6 +865,47 @@ impl DamageBonus {
         ::std::default::Default::default()
     }
 
+    // optional .SC2APIProtocol.Attribute attribute = 1;
+
+    pub fn attribute(&self) -> Attribute {
+        match self.attribute {
+            Some(e) => e.enum_value_or(Attribute::Light),
+            None => Attribute::Light,
+        }
+    }
+
+    pub fn clear_attribute(&mut self) {
+        self.attribute = ::std::option::Option::None;
+    }
+
+    pub fn has_attribute(&self) -> bool {
+        self.attribute.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_attribute(&mut self, v: Attribute) {
+        self.attribute = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional float bonus = 2;
+
+    pub fn bonus(&self) -> f32 {
+        self.bonus.unwrap_or(0.)
+    }
+
+    pub fn clear_bonus(&mut self) {
+        self.bonus = ::std::option::Option::None;
+    }
+
+    pub fn has_bonus(&self) -> bool {
+        self.bonus.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_bonus(&mut self, v: f32) {
+        self.bonus = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(2);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -655,6 +1052,104 @@ impl<'a> ::std::default::Default for &'a Weapon {
 impl Weapon {
     pub fn new() -> Weapon {
         ::std::default::Default::default()
+    }
+
+    // optional .SC2APIProtocol.Weapon.TargetType type = 1;
+
+    pub fn type_(&self) -> weapon::TargetType {
+        match self.type_ {
+            Some(e) => e.enum_value_or(weapon::TargetType::Ground),
+            None => weapon::TargetType::Ground,
+        }
+    }
+
+    pub fn clear_type_(&mut self) {
+        self.type_ = ::std::option::Option::None;
+    }
+
+    pub fn has_type(&self) -> bool {
+        self.type_.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_type(&mut self, v: weapon::TargetType) {
+        self.type_ = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional float damage = 2;
+
+    pub fn damage(&self) -> f32 {
+        self.damage.unwrap_or(0.)
+    }
+
+    pub fn clear_damage(&mut self) {
+        self.damage = ::std::option::Option::None;
+    }
+
+    pub fn has_damage(&self) -> bool {
+        self.damage.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_damage(&mut self, v: f32) {
+        self.damage = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 attacks = 4;
+
+    pub fn attacks(&self) -> u32 {
+        self.attacks.unwrap_or(0)
+    }
+
+    pub fn clear_attacks(&mut self) {
+        self.attacks = ::std::option::Option::None;
+    }
+
+    pub fn has_attacks(&self) -> bool {
+        self.attacks.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_attacks(&mut self, v: u32) {
+        self.attacks = ::std::option::Option::Some(v);
+    }
+
+    // optional float range = 5;
+
+    pub fn range(&self) -> f32 {
+        self.range.unwrap_or(0.)
+    }
+
+    pub fn clear_range(&mut self) {
+        self.range = ::std::option::Option::None;
+    }
+
+    pub fn has_range(&self) -> bool {
+        self.range.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_range(&mut self, v: f32) {
+        self.range = ::std::option::Option::Some(v);
+    }
+
+    // optional float speed = 6;
+
+    pub fn speed(&self) -> f32 {
+        self.speed.unwrap_or(0.)
+    }
+
+    pub fn clear_speed(&mut self) {
+        self.speed = ::std::option::Option::None;
+    }
+
+    pub fn has_speed(&self) -> bool {
+        self.speed.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_speed(&mut self, v: f32) {
+        self.speed = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -975,6 +1470,387 @@ impl<'a> ::std::default::Default for &'a UnitTypeData {
 impl UnitTypeData {
     pub fn new() -> UnitTypeData {
         ::std::default::Default::default()
+    }
+
+    // optional uint32 unit_id = 1;
+
+    pub fn unit_id(&self) -> u32 {
+        self.unit_id.unwrap_or(0)
+    }
+
+    pub fn clear_unit_id(&mut self) {
+        self.unit_id = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_id(&self) -> bool {
+        self.unit_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_id(&mut self, v: u32) {
+        self.unit_id = ::std::option::Option::Some(v);
+    }
+
+    // optional string name = 2;
+
+    pub fn name(&self) -> &str {
+        match self.name.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_name(&mut self) {
+        self.name = ::std::option::Option::None;
+    }
+
+    pub fn has_name(&self) -> bool {
+        self.name.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_name(&mut self, v: ::std::string::String) {
+        self.name = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_name(&mut self) -> &mut ::std::string::String {
+        if self.name.is_none() {
+            self.name = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.name.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_name(&mut self) -> ::std::string::String {
+        self.name.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional bool available = 3;
+
+    pub fn available(&self) -> bool {
+        self.available.unwrap_or(false)
+    }
+
+    pub fn clear_available(&mut self) {
+        self.available = ::std::option::Option::None;
+    }
+
+    pub fn has_available(&self) -> bool {
+        self.available.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_available(&mut self, v: bool) {
+        self.available = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 cargo_size = 4;
+
+    pub fn cargo_size(&self) -> u32 {
+        self.cargo_size.unwrap_or(0)
+    }
+
+    pub fn clear_cargo_size(&mut self) {
+        self.cargo_size = ::std::option::Option::None;
+    }
+
+    pub fn has_cargo_size(&self) -> bool {
+        self.cargo_size.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_cargo_size(&mut self, v: u32) {
+        self.cargo_size = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 mineral_cost = 12;
+
+    pub fn mineral_cost(&self) -> u32 {
+        self.mineral_cost.unwrap_or(0)
+    }
+
+    pub fn clear_mineral_cost(&mut self) {
+        self.mineral_cost = ::std::option::Option::None;
+    }
+
+    pub fn has_mineral_cost(&self) -> bool {
+        self.mineral_cost.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_mineral_cost(&mut self, v: u32) {
+        self.mineral_cost = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 vespene_cost = 13;
+
+    pub fn vespene_cost(&self) -> u32 {
+        self.vespene_cost.unwrap_or(0)
+    }
+
+    pub fn clear_vespene_cost(&mut self) {
+        self.vespene_cost = ::std::option::Option::None;
+    }
+
+    pub fn has_vespene_cost(&self) -> bool {
+        self.vespene_cost.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_vespene_cost(&mut self, v: u32) {
+        self.vespene_cost = ::std::option::Option::Some(v);
+    }
+
+    // optional float food_required = 14;
+
+    pub fn food_required(&self) -> f32 {
+        self.food_required.unwrap_or(0.)
+    }
+
+    pub fn clear_food_required(&mut self) {
+        self.food_required = ::std::option::Option::None;
+    }
+
+    pub fn has_food_required(&self) -> bool {
+        self.food_required.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_food_required(&mut self, v: f32) {
+        self.food_required = ::std::option::Option::Some(v);
+    }
+
+    // optional float food_provided = 18;
+
+    pub fn food_provided(&self) -> f32 {
+        self.food_provided.unwrap_or(0.)
+    }
+
+    pub fn clear_food_provided(&mut self) {
+        self.food_provided = ::std::option::Option::None;
+    }
+
+    pub fn has_food_provided(&self) -> bool {
+        self.food_provided.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_food_provided(&mut self, v: f32) {
+        self.food_provided = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 ability_id = 15;
+
+    pub fn ability_id(&self) -> u32 {
+        self.ability_id.unwrap_or(0)
+    }
+
+    pub fn clear_ability_id(&mut self) {
+        self.ability_id = ::std::option::Option::None;
+    }
+
+    pub fn has_ability_id(&self) -> bool {
+        self.ability_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ability_id(&mut self, v: u32) {
+        self.ability_id = ::std::option::Option::Some(v);
+    }
+
+    // optional .SC2APIProtocol.Race race = 16;
+
+    pub fn race(&self) -> super::common::Race {
+        match self.race {
+            Some(e) => e.enum_value_or(super::common::Race::NoRace),
+            None => super::common::Race::NoRace,
+        }
+    }
+
+    pub fn clear_race(&mut self) {
+        self.race = ::std::option::Option::None;
+    }
+
+    pub fn has_race(&self) -> bool {
+        self.race.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_race(&mut self, v: super::common::Race) {
+        self.race = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional float build_time = 17;
+
+    pub fn build_time(&self) -> f32 {
+        self.build_time.unwrap_or(0.)
+    }
+
+    pub fn clear_build_time(&mut self) {
+        self.build_time = ::std::option::Option::None;
+    }
+
+    pub fn has_build_time(&self) -> bool {
+        self.build_time.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_build_time(&mut self, v: f32) {
+        self.build_time = ::std::option::Option::Some(v);
+    }
+
+    // optional bool has_vespene = 19;
+
+    pub fn has_vespene(&self) -> bool {
+        self.has_vespene.unwrap_or(false)
+    }
+
+    pub fn clear_has_vespene(&mut self) {
+        self.has_vespene = ::std::option::Option::None;
+    }
+
+    pub fn has_has_vespene(&self) -> bool {
+        self.has_vespene.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_has_vespene(&mut self, v: bool) {
+        self.has_vespene = ::std::option::Option::Some(v);
+    }
+
+    // optional bool has_minerals = 20;
+
+    pub fn has_minerals(&self) -> bool {
+        self.has_minerals.unwrap_or(false)
+    }
+
+    pub fn clear_has_minerals(&mut self) {
+        self.has_minerals = ::std::option::Option::None;
+    }
+
+    pub fn has_has_minerals(&self) -> bool {
+        self.has_minerals.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_has_minerals(&mut self, v: bool) {
+        self.has_minerals = ::std::option::Option::Some(v);
+    }
+
+    // optional float sight_range = 25;
+
+    pub fn sight_range(&self) -> f32 {
+        self.sight_range.unwrap_or(0.)
+    }
+
+    pub fn clear_sight_range(&mut self) {
+        self.sight_range = ::std::option::Option::None;
+    }
+
+    pub fn has_sight_range(&self) -> bool {
+        self.sight_range.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_sight_range(&mut self, v: f32) {
+        self.sight_range = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 unit_alias = 22;
+
+    pub fn unit_alias(&self) -> u32 {
+        self.unit_alias.unwrap_or(0)
+    }
+
+    pub fn clear_unit_alias(&mut self) {
+        self.unit_alias = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_alias(&self) -> bool {
+        self.unit_alias.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_alias(&mut self, v: u32) {
+        self.unit_alias = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 tech_requirement = 23;
+
+    pub fn tech_requirement(&self) -> u32 {
+        self.tech_requirement.unwrap_or(0)
+    }
+
+    pub fn clear_tech_requirement(&mut self) {
+        self.tech_requirement = ::std::option::Option::None;
+    }
+
+    pub fn has_tech_requirement(&self) -> bool {
+        self.tech_requirement.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_tech_requirement(&mut self, v: u32) {
+        self.tech_requirement = ::std::option::Option::Some(v);
+    }
+
+    // optional bool require_attached = 24;
+
+    pub fn require_attached(&self) -> bool {
+        self.require_attached.unwrap_or(false)
+    }
+
+    pub fn clear_require_attached(&mut self) {
+        self.require_attached = ::std::option::Option::None;
+    }
+
+    pub fn has_require_attached(&self) -> bool {
+        self.require_attached.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_require_attached(&mut self, v: bool) {
+        self.require_attached = ::std::option::Option::Some(v);
+    }
+
+    // optional float movement_speed = 9;
+
+    pub fn movement_speed(&self) -> f32 {
+        self.movement_speed.unwrap_or(0.)
+    }
+
+    pub fn clear_movement_speed(&mut self) {
+        self.movement_speed = ::std::option::Option::None;
+    }
+
+    pub fn has_movement_speed(&self) -> bool {
+        self.movement_speed.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_movement_speed(&mut self, v: f32) {
+        self.movement_speed = ::std::option::Option::Some(v);
+    }
+
+    // optional float armor = 10;
+
+    pub fn armor(&self) -> f32 {
+        self.armor.unwrap_or(0.)
+    }
+
+    pub fn clear_armor(&mut self) {
+        self.armor = ::std::option::Option::None;
+    }
+
+    pub fn has_armor(&self) -> bool {
+        self.armor.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_armor(&mut self, v: f32) {
+        self.armor = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -1452,6 +2328,137 @@ impl UpgradeData {
         ::std::default::Default::default()
     }
 
+    // optional uint32 upgrade_id = 1;
+
+    pub fn upgrade_id(&self) -> u32 {
+        self.upgrade_id.unwrap_or(0)
+    }
+
+    pub fn clear_upgrade_id(&mut self) {
+        self.upgrade_id = ::std::option::Option::None;
+    }
+
+    pub fn has_upgrade_id(&self) -> bool {
+        self.upgrade_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_upgrade_id(&mut self, v: u32) {
+        self.upgrade_id = ::std::option::Option::Some(v);
+    }
+
+    // optional string name = 2;
+
+    pub fn name(&self) -> &str {
+        match self.name.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_name(&mut self) {
+        self.name = ::std::option::Option::None;
+    }
+
+    pub fn has_name(&self) -> bool {
+        self.name.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_name(&mut self, v: ::std::string::String) {
+        self.name = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_name(&mut self) -> &mut ::std::string::String {
+        if self.name.is_none() {
+            self.name = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.name.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_name(&mut self) -> ::std::string::String {
+        self.name.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional uint32 mineral_cost = 3;
+
+    pub fn mineral_cost(&self) -> u32 {
+        self.mineral_cost.unwrap_or(0)
+    }
+
+    pub fn clear_mineral_cost(&mut self) {
+        self.mineral_cost = ::std::option::Option::None;
+    }
+
+    pub fn has_mineral_cost(&self) -> bool {
+        self.mineral_cost.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_mineral_cost(&mut self, v: u32) {
+        self.mineral_cost = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 vespene_cost = 4;
+
+    pub fn vespene_cost(&self) -> u32 {
+        self.vespene_cost.unwrap_or(0)
+    }
+
+    pub fn clear_vespene_cost(&mut self) {
+        self.vespene_cost = ::std::option::Option::None;
+    }
+
+    pub fn has_vespene_cost(&self) -> bool {
+        self.vespene_cost.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_vespene_cost(&mut self, v: u32) {
+        self.vespene_cost = ::std::option::Option::Some(v);
+    }
+
+    // optional float research_time = 5;
+
+    pub fn research_time(&self) -> f32 {
+        self.research_time.unwrap_or(0.)
+    }
+
+    pub fn clear_research_time(&mut self) {
+        self.research_time = ::std::option::Option::None;
+    }
+
+    pub fn has_research_time(&self) -> bool {
+        self.research_time.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_research_time(&mut self, v: f32) {
+        self.research_time = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 ability_id = 6;
+
+    pub fn ability_id(&self) -> u32 {
+        self.ability_id.unwrap_or(0)
+    }
+
+    pub fn clear_ability_id(&mut self) {
+        self.ability_id = ::std::option::Option::None;
+    }
+
+    pub fn has_ability_id(&self) -> bool {
+        self.ability_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ability_id(&mut self, v: u32) {
+        self.ability_id = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(6);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -1656,6 +2663,61 @@ impl BuffData {
         ::std::default::Default::default()
     }
 
+    // optional uint32 buff_id = 1;
+
+    pub fn buff_id(&self) -> u32 {
+        self.buff_id.unwrap_or(0)
+    }
+
+    pub fn clear_buff_id(&mut self) {
+        self.buff_id = ::std::option::Option::None;
+    }
+
+    pub fn has_buff_id(&self) -> bool {
+        self.buff_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_buff_id(&mut self, v: u32) {
+        self.buff_id = ::std::option::Option::Some(v);
+    }
+
+    // optional string name = 2;
+
+    pub fn name(&self) -> &str {
+        match self.name.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_name(&mut self) {
+        self.name = ::std::option::Option::None;
+    }
+
+    pub fn has_name(&self) -> bool {
+        self.name.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_name(&mut self, v: ::std::string::String) {
+        self.name = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_name(&mut self) -> &mut ::std::string::String {
+        if self.name.is_none() {
+            self.name = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.name.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_name(&mut self) -> ::std::string::String {
+        self.name.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(2);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -1798,6 +2860,116 @@ impl<'a> ::std::default::Default for &'a EffectData {
 impl EffectData {
     pub fn new() -> EffectData {
         ::std::default::Default::default()
+    }
+
+    // optional uint32 effect_id = 1;
+
+    pub fn effect_id(&self) -> u32 {
+        self.effect_id.unwrap_or(0)
+    }
+
+    pub fn clear_effect_id(&mut self) {
+        self.effect_id = ::std::option::Option::None;
+    }
+
+    pub fn has_effect_id(&self) -> bool {
+        self.effect_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_effect_id(&mut self, v: u32) {
+        self.effect_id = ::std::option::Option::Some(v);
+    }
+
+    // optional string name = 2;
+
+    pub fn name(&self) -> &str {
+        match self.name.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_name(&mut self) {
+        self.name = ::std::option::Option::None;
+    }
+
+    pub fn has_name(&self) -> bool {
+        self.name.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_name(&mut self, v: ::std::string::String) {
+        self.name = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_name(&mut self) -> &mut ::std::string::String {
+        if self.name.is_none() {
+            self.name = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.name.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_name(&mut self) -> ::std::string::String {
+        self.name.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional string friendly_name = 3;
+
+    pub fn friendly_name(&self) -> &str {
+        match self.friendly_name.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_friendly_name(&mut self) {
+        self.friendly_name = ::std::option::Option::None;
+    }
+
+    pub fn has_friendly_name(&self) -> bool {
+        self.friendly_name.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_friendly_name(&mut self, v: ::std::string::String) {
+        self.friendly_name = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_friendly_name(&mut self) -> &mut ::std::string::String {
+        if self.friendly_name.is_none() {
+            self.friendly_name = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.friendly_name.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_friendly_name(&mut self) -> ::std::string::String {
+        self.friendly_name.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional float radius = 4;
+
+    pub fn radius(&self) -> f32 {
+        self.radius.unwrap_or(0.)
+    }
+
+    pub fn clear_radius(&mut self) {
+        self.radius = ::std::option::Option::None;
+    }
+
+    pub fn has_radius(&self) -> bool {
+        self.radius.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_radius(&mut self, v: f32) {
+        self.radius = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {

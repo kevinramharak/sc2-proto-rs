@@ -52,6 +52,25 @@ impl RequestQuery {
         ::std::default::Default::default()
     }
 
+    // optional bool ignore_resource_requirements = 4;
+
+    pub fn ignore_resource_requirements(&self) -> bool {
+        self.ignore_resource_requirements.unwrap_or(false)
+    }
+
+    pub fn clear_ignore_resource_requirements(&mut self) {
+        self.ignore_resource_requirements = ::std::option::Option::None;
+    }
+
+    pub fn has_ignore_resource_requirements(&self) -> bool {
+        self.ignore_resource_requirements.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ignore_resource_requirements(&mut self, v: bool) {
+        self.ignore_resource_requirements = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(4);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -659,6 +678,25 @@ impl ResponseQueryPathing {
         ::std::default::Default::default()
     }
 
+    // optional float distance = 1;
+
+    pub fn distance(&self) -> f32 {
+        self.distance.unwrap_or(0.)
+    }
+
+    pub fn clear_distance(&mut self) {
+        self.distance = ::std::option::Option::None;
+    }
+
+    pub fn has_distance(&self) -> bool {
+        self.distance.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_distance(&mut self, v: f32) {
+        self.distance = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(1);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -779,6 +817,25 @@ impl<'a> ::std::default::Default for &'a RequestQueryAvailableAbilities {
 impl RequestQueryAvailableAbilities {
     pub fn new() -> RequestQueryAvailableAbilities {
         ::std::default::Default::default()
+    }
+
+    // optional uint64 unit_tag = 1;
+
+    pub fn unit_tag(&self) -> u64 {
+        self.unit_tag.unwrap_or(0)
+    }
+
+    pub fn clear_unit_tag(&mut self) {
+        self.unit_tag = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_tag(&self) -> bool {
+        self.unit_tag.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_tag(&mut self, v: u64) {
+        self.unit_tag = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -905,6 +962,44 @@ impl<'a> ::std::default::Default for &'a ResponseQueryAvailableAbilities {
 impl ResponseQueryAvailableAbilities {
     pub fn new() -> ResponseQueryAvailableAbilities {
         ::std::default::Default::default()
+    }
+
+    // optional uint64 unit_tag = 2;
+
+    pub fn unit_tag(&self) -> u64 {
+        self.unit_tag.unwrap_or(0)
+    }
+
+    pub fn clear_unit_tag(&mut self) {
+        self.unit_tag = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_tag(&self) -> bool {
+        self.unit_tag.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_tag(&mut self, v: u64) {
+        self.unit_tag = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 unit_type_id = 3;
+
+    pub fn unit_type_id(&self) -> u32 {
+        self.unit_type_id.unwrap_or(0)
+    }
+
+    pub fn clear_unit_type_id(&mut self) {
+        self.unit_type_id = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_type_id(&self) -> bool {
+        self.unit_type_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_type_id(&mut self, v: u32) {
+        self.unit_type_id = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -1066,6 +1161,44 @@ impl RequestQueryBuildingPlacement {
         ::std::default::Default::default()
     }
 
+    // optional int32 ability_id = 1;
+
+    pub fn ability_id(&self) -> i32 {
+        self.ability_id.unwrap_or(0)
+    }
+
+    pub fn clear_ability_id(&mut self) {
+        self.ability_id = ::std::option::Option::None;
+    }
+
+    pub fn has_ability_id(&self) -> bool {
+        self.ability_id.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ability_id(&mut self, v: i32) {
+        self.ability_id = ::std::option::Option::Some(v);
+    }
+
+    // optional uint64 placing_unit_tag = 3;
+
+    pub fn placing_unit_tag(&self) -> u64 {
+        self.placing_unit_tag.unwrap_or(0)
+    }
+
+    pub fn clear_placing_unit_tag(&mut self) {
+        self.placing_unit_tag = ::std::option::Option::None;
+    }
+
+    pub fn has_placing_unit_tag(&self) -> bool {
+        self.placing_unit_tag.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_placing_unit_tag(&mut self, v: u64) {
+        self.placing_unit_tag = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -1219,6 +1352,28 @@ impl<'a> ::std::default::Default for &'a ResponseQueryBuildingPlacement {
 impl ResponseQueryBuildingPlacement {
     pub fn new() -> ResponseQueryBuildingPlacement {
         ::std::default::Default::default()
+    }
+
+    // optional .SC2APIProtocol.ActionResult result = 1;
+
+    pub fn result(&self) -> super::error::ActionResult {
+        match self.result {
+            Some(e) => e.enum_value_or(super::error::ActionResult::Success),
+            None => super::error::ActionResult::Success,
+        }
+    }
+
+    pub fn clear_result(&mut self) {
+        self.result = ::std::option::Option::None;
+    }
+
+    pub fn has_result(&self) -> bool {
+        self.result.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_result(&mut self, v: super::error::ActionResult) {
+        self.result = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {

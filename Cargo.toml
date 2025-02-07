@@ -16,8 +16,6 @@ edition = "2018"
 build = "build.rs"
 
 [features]
-generate-accessors = []
-generate-getter = []
 lite-runtime = []
 with-bytes = ["dep:bytes"]
 generate = ["protobuf-codegen", "protoc-bin-vendored"]

@@ -1044,6 +1044,63 @@ impl Color {
         ::std::default::Default::default()
     }
 
+    // optional uint32 r = 1;
+
+    pub fn r(&self) -> u32 {
+        self.r.unwrap_or(0)
+    }
+
+    pub fn clear_r(&mut self) {
+        self.r = ::std::option::Option::None;
+    }
+
+    pub fn has_r(&self) -> bool {
+        self.r.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_r(&mut self, v: u32) {
+        self.r = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 g = 2;
+
+    pub fn g(&self) -> u32 {
+        self.g.unwrap_or(0)
+    }
+
+    pub fn clear_g(&mut self) {
+        self.g = ::std::option::Option::None;
+    }
+
+    pub fn has_g(&self) -> bool {
+        self.g.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_g(&mut self, v: u32) {
+        self.g = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 b = 3;
+
+    pub fn b(&self) -> u32 {
+        self.b.unwrap_or(0)
+    }
+
+    pub fn clear_b(&mut self) {
+        self.b = ::std::option::Option::None;
+    }
+
+    pub fn has_b(&self) -> bool {
+        self.b.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_b(&mut self, v: u32) {
+        self.b = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -1204,6 +1261,61 @@ impl<'a> ::std::default::Default for &'a DebugText {
 impl DebugText {
     pub fn new() -> DebugText {
         ::std::default::Default::default()
+    }
+
+    // optional string text = 2;
+
+    pub fn text(&self) -> &str {
+        match self.text.as_ref() {
+            Some(v) => v,
+            None => "",
+        }
+    }
+
+    pub fn clear_text(&mut self) {
+        self.text = ::std::option::Option::None;
+    }
+
+    pub fn has_text(&self) -> bool {
+        self.text.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_text(&mut self, v: ::std::string::String) {
+        self.text = ::std::option::Option::Some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_text(&mut self) -> &mut ::std::string::String {
+        if self.text.is_none() {
+            self.text = ::std::option::Option::Some(::std::string::String::new());
+        }
+        self.text.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_text(&mut self) -> ::std::string::String {
+        self.text.take().unwrap_or_else(|| ::std::string::String::new())
+    }
+
+    // optional uint32 size = 5;
+
+    pub fn size(&self) -> u32 {
+        self.size.unwrap_or(0)
+    }
+
+    pub fn clear_size(&mut self) {
+        self.size = ::std::option::Option::None;
+    }
+
+    pub fn has_size(&self) -> bool {
+        self.size.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_size(&mut self, v: u32) {
+        self.size = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -1702,6 +1814,25 @@ impl DebugSphere {
         ::std::default::Default::default()
     }
 
+    // optional float r = 3;
+
+    pub fn r(&self) -> f32 {
+        self.r.unwrap_or(0.)
+    }
+
+    pub fn clear_r(&mut self) {
+        self.r = ::std::option::Option::None;
+    }
+
+    pub fn has_r(&self) -> bool {
+        self.r.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_r(&mut self, v: f32) {
+        self.r = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -1862,6 +1993,63 @@ impl<'a> ::std::default::Default for &'a DebugCreateUnit {
 impl DebugCreateUnit {
     pub fn new() -> DebugCreateUnit {
         ::std::default::Default::default()
+    }
+
+    // optional uint32 unit_type = 1;
+
+    pub fn unit_type(&self) -> u32 {
+        self.unit_type.unwrap_or(0)
+    }
+
+    pub fn clear_unit_type(&mut self) {
+        self.unit_type = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_type(&self) -> bool {
+        self.unit_type.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_type(&mut self, v: u32) {
+        self.unit_type = ::std::option::Option::Some(v);
+    }
+
+    // optional int32 owner = 2;
+
+    pub fn owner(&self) -> i32 {
+        self.owner.unwrap_or(0)
+    }
+
+    pub fn clear_owner(&mut self) {
+        self.owner = ::std::option::Option::None;
+    }
+
+    pub fn has_owner(&self) -> bool {
+        self.owner.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_owner(&mut self, v: i32) {
+        self.owner = ::std::option::Option::Some(v);
+    }
+
+    // optional uint32 quantity = 4;
+
+    pub fn quantity(&self) -> u32 {
+        self.quantity.unwrap_or(0)
+    }
+
+    pub fn clear_quantity(&mut self) {
+        self.quantity = ::std::option::Option::None;
+    }
+
+    pub fn has_quantity(&self) -> bool {
+        self.quantity.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_quantity(&mut self, v: u32) {
+        self.quantity = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -2162,6 +2350,47 @@ impl DebugTestProcess {
         ::std::default::Default::default()
     }
 
+    // optional .SC2APIProtocol.DebugTestProcess.Test test = 1;
+
+    pub fn test(&self) -> debug_test_process::Test {
+        match self.test {
+            Some(e) => e.enum_value_or(debug_test_process::Test::hang),
+            None => debug_test_process::Test::hang,
+        }
+    }
+
+    pub fn clear_test(&mut self) {
+        self.test = ::std::option::Option::None;
+    }
+
+    pub fn has_test(&self) -> bool {
+        self.test.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_test(&mut self, v: debug_test_process::Test) {
+        self.test = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional int32 delay_ms = 2;
+
+    pub fn delay_ms(&self) -> i32 {
+        self.delay_ms.unwrap_or(0)
+    }
+
+    pub fn clear_delay_ms(&mut self) {
+        self.delay_ms = ::std::option::Option::None;
+    }
+
+    pub fn has_delay_ms(&self) -> bool {
+        self.delay_ms.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_delay_ms(&mut self, v: i32) {
+        self.delay_ms = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(2);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -2375,6 +2604,25 @@ impl DebugSetScore {
         ::std::default::Default::default()
     }
 
+    // optional float score = 1;
+
+    pub fn score(&self) -> f32 {
+        self.score.unwrap_or(0.)
+    }
+
+    pub fn clear_score(&mut self) {
+        self.score = ::std::option::Option::None;
+    }
+
+    pub fn has_score(&self) -> bool {
+        self.score.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_score(&mut self, v: f32) {
+        self.score = ::std::option::Option::Some(v);
+    }
+
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(1);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
@@ -2495,6 +2743,28 @@ impl<'a> ::std::default::Default for &'a DebugEndGame {
 impl DebugEndGame {
     pub fn new() -> DebugEndGame {
         ::std::default::Default::default()
+    }
+
+    // optional .SC2APIProtocol.DebugEndGame.EndResult end_result = 1;
+
+    pub fn end_result(&self) -> debug_end_game::EndResult {
+        match self.end_result {
+            Some(e) => e.enum_value_or(debug_end_game::EndResult::Surrender),
+            None => debug_end_game::EndResult::Surrender,
+        }
+    }
+
+    pub fn clear_end_result(&mut self) {
+        self.end_result = ::std::option::Option::None;
+    }
+
+    pub fn has_end_result(&self) -> bool {
+        self.end_result.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_end_result(&mut self, v: debug_end_game::EndResult) {
+        self.end_result = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
@@ -2690,6 +2960,66 @@ impl<'a> ::std::default::Default for &'a DebugSetUnitValue {
 impl DebugSetUnitValue {
     pub fn new() -> DebugSetUnitValue {
         ::std::default::Default::default()
+    }
+
+    // optional .SC2APIProtocol.DebugSetUnitValue.UnitValue unit_value = 1;
+
+    pub fn unit_value(&self) -> debug_set_unit_value::UnitValue {
+        match self.unit_value {
+            Some(e) => e.enum_value_or(debug_set_unit_value::UnitValue::Energy),
+            None => debug_set_unit_value::UnitValue::Energy,
+        }
+    }
+
+    pub fn clear_unit_value(&mut self) {
+        self.unit_value = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_value(&self) -> bool {
+        self.unit_value.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_value(&mut self, v: debug_set_unit_value::UnitValue) {
+        self.unit_value = ::std::option::Option::Some(::protobuf::EnumOrUnknown::new(v));
+    }
+
+    // optional float value = 2;
+
+    pub fn value(&self) -> f32 {
+        self.value.unwrap_or(0.)
+    }
+
+    pub fn clear_value(&mut self) {
+        self.value = ::std::option::Option::None;
+    }
+
+    pub fn has_value(&self) -> bool {
+        self.value.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_value(&mut self, v: f32) {
+        self.value = ::std::option::Option::Some(v);
+    }
+
+    // optional uint64 unit_tag = 3;
+
+    pub fn unit_tag(&self) -> u64 {
+        self.unit_tag.unwrap_or(0)
+    }
+
+    pub fn clear_unit_tag(&mut self) {
+        self.unit_tag = ::std::option::Option::None;
+    }
+
+    pub fn has_unit_tag(&self) -> bool {
+        self.unit_tag.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_unit_tag(&mut self, v: u64) {
+        self.unit_tag = ::std::option::Option::Some(v);
     }
 
     fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
